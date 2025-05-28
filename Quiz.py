@@ -11,7 +11,7 @@ print("""____________________
 ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨ \n""" )     #Intro
 
 print("""Regras: Leia atentamente a questão e responda a letra que você acredita ser a resposta correta.
-Ex: \"Quantas asas tem uma galinha?\". Resposta: A \n \n""")                #Explicação
+Ex: \"Quantas asas tem uma galinha?\". Resposta: A \n \n""")  #Regras
 
 
 
@@ -33,7 +33,7 @@ respostas = ["\n A) 5 \n B) 1 \n C) 2 \n D) 3,5" , "\n A) Bicho-preguiça \n B) 
              "\n A) Aranha \n B) Formiga \n C) Besouro \n D) Vagalume", "\n A) Onça pintada \n B) Leopardo \n C) Leão \n D) Tigre",
              "\n A) Escorpião \n B) Opilião \n C) Ácaro \n D) Carrapato"]
 
-                                                                                                                                                                                                                          #configuração questões
+
 correta = ["C", "D", "A", "D", "A", "C", "C", "B", "A", "B", "C", "B", "A", "D", "B"]
 
 
@@ -46,15 +46,15 @@ while acerto+erro != 10:
 
   print(f"|{perguntas[questoes]}| \n {respostas[questoes]} \n")
 
-  chute = str(input("Qual a resposta correta?: \n \n")).upper()   #upper para transformar as letras em maiúscula
+  chute = str(input("Qual a resposta correta?: \n \n")).upper()  
 
   while chute != "A" and chute != "B" and chute != "C" and chute != "D":
-    print("Resposta inválida! Escolha uma das 4 letras disponíveis...  \n \n")
+    print("Resposta inválida! Escolha uma das 4 letras disponíveis...  \n \n")      
 
     time.sleep(1.5)
 
     print(f"|{perguntas[questoes]}| \n {respostas[questoes]} \n")
-    chute = str(input("Qual a resposta correta?: \n \n")).upper()                                                               #ARRUMAR
+    chute = str(input("Qual a resposta correta?: \n \n")).upper()
     
 
   if chute != correta[questoes]:
@@ -63,7 +63,7 @@ while acerto+erro != 10:
     erro += 1
 
     perguntas.pop(questoes)
-    respostas.pop(questoes)         #tirar a pergunta para não repetir
+    respostas.pop(questoes)         
     correta.pop(questoes)
 
     time.sleep(2)
@@ -74,15 +74,15 @@ while acerto+erro != 10:
     acerto += 1
 
     perguntas.pop(questoes)
-    respostas.pop(questoes)         #tirar a pergunta para não repitir
+    respostas.pop(questoes)         
     correta.pop(questoes)
 
     time.sleep(2)
 
 
-if erro > 3:
-  print("Acabou o jogo!! Você acertou um total de {} e errou {} questões. Melhore...".format(acerto, erro))
-                                                                                                              #Resultado
+if erro > acerto:
+  print("Acabou o jogo!! Você acertou um total de {} e errou {} questões.".format(acerto, erro))
+                                                                                                              
 else:
   print("Acabou o jogo!! Você acertou um total de {} e errou {} questões. Parabéns!!!".format(acerto, erro))
 
